@@ -18,7 +18,7 @@ jobs:
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v2
         with:
-          root_file: main.tex
+          root_file: Jiasheng_Gu_CV.tex
           latexmk_use_xelatex: true
           pre_compile: |
               apk add msttcorefonts-installer fontconfig
@@ -27,7 +27,7 @@ jobs:
           
       - name: Stash PDF
         run: |
-          mv main.pdf $HOME # cache the file
+          mv Jiasheng_Gu_CV.pdf $HOME # cache the file
           
       - name: Create Branch
         uses: peterjgrainger/action-create-branch@v2.0.1
@@ -45,8 +45,8 @@ jobs:
         run: |
           git config --local user.email "984931887@qq.com"
           git config --local user.name "jiashenggu"
-          mv $HOME/main.pdf $(pwd) # bring it back 
-          git add -f main.pdf
+          mv $HOME/Jiasheng_Gu_CV.pdf $(pwd) # bring it back 
+          git add -f Jiasheng_Gu_CV.pdf
           git commit -m "Updated by GitHub Action Automatically"
           
       - name: Push PDF
@@ -60,6 +60,6 @@ jobs:
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
         with:
-          files: main.pdf
+          files: Jiasheng_Gu_CV.pdf
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
