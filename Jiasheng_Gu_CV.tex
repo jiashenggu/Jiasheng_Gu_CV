@@ -1,7 +1,7 @@
 % --- LaTeX CV Template - S. Venkatraman ---
 
 % Set document class and font size
-\documentclass[letterpaper, 11pt]{article}
+\documentclass[letterpaper, 10pt]{article}
 % \documentclass[11pt, letterpaper]{awesome-cv}
 % \usepackage[utf8]{inputenc}
 
@@ -13,6 +13,13 @@
 % Set page margins
 \usepackage[left=1in, right=1in, bottom=0.7in, top=0.7in]{geometry}
 
+% Defines writer's homepage (optional)
+% Usage: \homepage{<url>}
+\newcommand*{\homepage}[1]{\def\@homepage{#1}}
+
+% Defines writer's github (optional)
+% Usage: \github{<github-nick>}
+\newcommand*{\github}[1]{\def\@github{#1}}
 
 % Defines writer's mobile (optional)
 % Usage: \mobile{<mobile number>}
@@ -22,13 +29,9 @@
 % Usage: \email{<email adress>}
 \newcommand*{\email}[1]{\def\@email{#1}}
 
-% Defines writer's homepage (optional)
-% Usage: \homepage{<url>}
-\newcommand*{\homepage}[1]{\def\@homepage{#1}}
 
-% Defines writer's github (optional)
-% Usage: \github{<github-nick>}
-\newcommand*{\github}[1]{\def\@github{#1}}
+
+
 
 % Set line spacing
 \renewcommand{\baselinestretch}{1.15}
@@ -60,11 +63,12 @@
 \begin{center}
 \begin{tabular}{lllll}
 % Line 1: Email, GitHub, office location
-\textbf{Email}: gujiashe@usc.edu      &
- \href{https://github.com/jiashenggu}{\textbf{GitHub}}    &
- \textbf{Phone}: +1 (213) 204-0294   & 
- \href{https://www.linkedin.com/in/jiasheng-gu/}{\textbf{LinkedIn}} &
  \href{https://jiashenggu.github.io/}{\textbf{Homepage}} 
+ \href{https://github.com/jiashenggu}{\textbf{GitHub}}    &
+ \href{https://www.linkedin.com/in/jiasheng-gu/}{\textbf{LinkedIn}} &
+ \textbf{Email}: gujiashe@usc.edu      &
+ \textbf{Phone}: +1 (213) 204-0294   & 
+
 \end{tabular}
 \end{center}
 
@@ -77,10 +81,10 @@
 \begin{longtable}{p{1.3in}p{4.8in}}
 
 
-% --- Section: Research interests ---
+% --- Section: Research Interests ---
 
-\nohyphens{\color{black}{Research interests}}
-& I have a broad interest in natural language processing, machine learning, and artificial intelligence, with a particular interest in text generation, trustworthy AI models, and few-shot NLP. \\
+\nohyphens{\color{black}{Research Interests}}
+& I am interested in natural language processing, machine learning, and artificial intelligence, with a particular interest in text generation, trustworthy AI models, and few-shot NLP. \\
 & \\
 
 % --- Section: Education ---
@@ -98,7 +102,7 @@
 
 & \textbf{Xidian University} \hfill Xian, Shaanxi\\
 & B.E. in Telecommunications Engineering \hfill Sep. 2017 - Jun. 2021 \\
-& {\it GPA: 3.6}\\
+& {\it GPA: Top 10\%}\\
 & \\
 
 % --- Uncomment the next few lines if you want to include some courses ---
@@ -108,67 +112,78 @@
 %\item \underline{Relevant subject 2}: Course 1, Course 2, Course 3, Course 4
 %\end{itemize} \\
 
-
-
-% --- Section: Research experience ---
-
-\nohyphens{\color{black}{Research experience}} 
-
-&  \begin{itemize}[leftmargin=10pt, itemsep=-5pt, topsep=0pt,before=\textbf{North Carolina State University}]
-    \item Mentors: Dongkuan Xu, Xipeng shen \hfill Aug. 2022 -- Present 
-    \item Thesis: Zero-shot Code Generation via Rule-AI Co-learning from Document
-    \item Contribution: Proposed a zero-shot code generation framework combining rule-based and AI-based methods to generate DSL code from the retrieved document information.
-  \end{itemize}\\ 
-  
-
-&  \begin{itemize}[leftmargin=10pt, itemsep=-5pt, topsep=0pt,before=\textbf{The Pennsylvania State University}]
-    \item Mentor: Wenpeng Yin\hfill May. 2022 - Jul. 2022
-    \item Thesis: Robustness of learning from task instructions\hfill
-    \item Contribution: Experimented and analyzed the robustness of the instruction-tuned model on perturbed instructions.
-  \end{itemize}\\ 
-
-&  \begin{itemize}[leftmargin=10pt, itemsep=-5pt, topsep=0pt,before=\textbf{University of Southern California}]
-    \item Mentor: Massoud Pedram\hfill Aug. 2021 - Dec. 2021
-    \item Thesis: Training Deep Neural Networks for Reduced-Memory-Access Inference\hfill
-    \item Contribution: Integrated PyTorch distributed data-parallel framework into the flow to support multi-GPU processing.
-  \end{itemize}\\ 
-  
-&  \begin{itemize}[leftmargin=10pt, itemsep=-5pt, topsep=0pt,before=\textbf{University of Southern California}]
-    \item Mentor: Pedro Szekely\hfill Jan. 2022 - May. 2022
-    \item Thesis: Integrating factual information from language models into knowledge graph embeddings \hfill 
-    \item Contribution: Improved link prediction task by factual information mined from language models via prompts.
-  \end{itemize}\\ 
-
-&  \begin{itemize}[leftmargin=10pt, itemsep=-5pt, topsep=0pt,before=\textbf{ETH Zürich}]
-    \item Mentor: Yuyi Wang\hfill June. 2020 - Oct. 2020
-    \item Thesis: Designing pre-training tasks for text summarization\hfill 
-    \item Contribution: Using trained metrics to find the highest importance sentences as summaries, instead of automatic metrics, makes the pre-training task more effective.
-  \end{itemize}\\ 
-
-
-
 % --- Section: Publications ---
 
+% \section*{\fontsize{9}{1}\selectfont Publications}
 \nohyphens{\color{black}{Publications}}
-& \textbf{Few-shot Code Generation via Rule-AI Co-learning from Document} \\
+& \textbf{Few-shot Code Generation via Rule-AI Co-learning from Document\label{few-shot_code}}  \\
 & Jiasheng Gu, Zifan Nan, Dongkuan Xu, Xipeng shen \\
 & \textit{In prep, ACL}\\
 & \\
 
 
-& \textbf{Robustness of learning from task instructions} \\
+& \textbf{Robustness of learning from task instructions \label{robustness_instruction}} \\
 & Jiasheng Gu, Hanzi Xu, Liangyu Nie, Wenpeng Yin \\
 & \textit{Submitted, EACL}\\
 & \\
 
-& \textbf{Artificial Intelligence Related Techniques Used in Recent Bio-medical Publications} \\
+& \textbf{Artificial Intelligence Related Techniques Used in Recent Bio-medical Publications} \label{JMIR} \\
 & Jiasheng Gu, Lili Wang, Soroush Vosoughi \\
 & \textit{Submitted, Journal of Medical Internet Research (JMIR)}\\
 & \\
 
+% --- Section: Research experience ---
+
+\nohyphens{\color{black}{Research Experience}} 
+% \section*{\fontsize{9}{1}\selectfont Research Experience}
+
+&  \begin{itemize}[leftmargin=10pt, itemsep=-5pt, topsep=0pt,before=\textbf{North Carolina State University}]
+    \item Mentors: \href{http://personal.psu.edu/dux19/}{Dongkuan Xu}, \href{https://www.csc.ncsu.edu/people/xshen5}{Xipeng Shen} \hfill Aug. 2022 -- Present 
+    \item Project: Zero-shot Code Generation via Rule-AI Co-learning from Document
+    \item Contribution: Proposed a zero-shot code generation framework combining rule-based and AI-based methods to generate DSL code.
+    \item Publication: ACL in prep
+  \end{itemize}\\ 
+  
+
+&  \begin{itemize}[leftmargin=10pt, itemsep=-5pt, topsep=0pt,before=\textbf{Pennsylvania State University}]
+    \item Mentor: \href{https://www.wenpengyin.org/}{Wenpeng Yin}\hfill June. 2022 - Oct. 2022
+    \item Project: Robustness of learning from task instructions\hfill
+    \item Contribution: Experimented and analyzed the robustness of the instruction-tuned model on perturbed instructions.
+    \item Publication: EACL submitted
+  \end{itemize}\\ 
+
+&  \begin{itemize}[leftmargin=10pt, itemsep=-5pt, topsep=0pt,before=\textbf{Dartmouth College}]
+    \item Mentor: \href{https://www.cs.dartmouth.edu/~soroush//}{Soroush Vosoughi}\hfill May. 2022 - Sep. 2022
+    \item Project: Analysis of artificial intelligence techniques used in biomedical publications\hfill
+    \item Contribution: Proposed a method to analyze artificial intelligence techniques used in biomedical publications.
+    \item Publication: JMIR submitted
+  \end{itemize}\\ 
+  
+&  \begin{itemize}[leftmargin=10pt, itemsep=-5pt, topsep=0pt,before=\textbf{University of Southern California}]
+    \item Mentor: \href{https://usc-isi-i2.github.io/szekely/}{Pedro Szekely}\hfill Jan. 2022 - May. 2022
+    \item Project: Integrating factual information from language models into knowledge graph embeddings \hfill 
+    \item Contribution: Improved link prediction task by factual information mined from language models via prompts.
+  \end{itemize}\\ 
+
+&  \begin{itemize}[leftmargin=10pt, itemsep=-5pt, topsep=0pt,before=\textbf{University of Southern California}]
+    \item Mentor: \href{https://mpedram.com/}{Massoud Pedram}\hfill Aug. 2021 - Dec. 2021
+    \item Project: Reduced-Memory-Access Inference of Deep Neural Networks\hfill
+    \item Contribution: Integrated PyTorch distributed data-parallel framework into the flow to support multi-GPU processing.
+  \end{itemize}\\ 
+
+&  \begin{itemize}[leftmargin=10pt, itemsep=-5pt, topsep=0pt,before=\textbf{ETH Zürich}]
+    \item Mentor: \href{https://disco.ethz.ch/alumni/yuwang}{Yuyi Wang}\hfill June. 2020 - Oct. 2020
+    \item Project: Designing pre-training tasks for text summarization\hfill 
+    \item Contribution: Using trained metrics to find the highest importance sentences as summaries makes the pre-training task more effective.
+  \end{itemize}\\ 
+
+
+
+
+
 
 % & \textit{Average student rating: X/5.} \\
-& \\
+
 
 % & \textbf{Teaching assistant, Department of Subject (University)} \hfill Spring 2020 \\
 % & STAT 234: Name of course here \\
@@ -184,29 +199,43 @@
 
 % --- Section: Industry experience ---
 
-{\color{black}{Industry experience}} 
-& {\textbf{Lime}}\hfill Los Angeles, CA \\
-& SDE internship \hfill Summer 2022 \\
-& Reengineered a system for extracting and computing features, making it easier to modify feature definitions, compute features more efficiently, and add more tests.\\
-&\\
+{\color{black}{Industry Experience}} 
 
-& {\textbf{Transwarp}}\hfill Shanghai\\
-& NLP internship \hfill Spring 2021 \\
-& Established an NLP system to summarize the text through Tensorflow in the environment built by Nvidia Docker.\\
-& \\
+&  \begin{itemize}[leftmargin=10pt, itemsep=-5pt, topsep=0pt,before=\textbf{Lime}]
+    \item SDE internship \hfill May. 2022 - Aug. 2022 
+    \item Reengineered a system for extracting and computing features to make it easier to modify feature definitions and compute features more efficiently.
+  \end{itemize}\\ 
 
-\newline
+  
+% & {\textbf{Lime}}\hfill Los Angeles, CA \\
+% & SDE internship \hfill May. 2022 - Aug. 2022 \\
+% & Reengineered a system for extracting and computing features, making it easier to modify feature definitions, compute features more efficiently, and add more tests.\\
+% &\\
+
+&  \begin{itemize}[leftmargin=10pt, itemsep=-5pt, topsep=0pt,before=\textbf{Umer Technology}]
+    \item NLP internship \hfill Apr. 2021 - Aug. 2021 
+    \item  Deployed a medical named entity identification system via BERT+CRF.
+  \end{itemize}\\ 
+
+&  \begin{itemize}[leftmargin=10pt, itemsep=-5pt, topsep=0pt,before=\textbf{Transwarp}]
+    \item NLP internship \hfill Jan. 2021 - Apr. 2021 
+    \item  Established an NLP system to summarize the text through Tensorflow in the environment built by Nvidia Docker.
+  \end{itemize}\\ 
+
+
 {\color{black}{Professional service}}
-&  \begin{itemize}[leftmargin=10pt, itemsep=-5pt, topsep=0pt]
-    \item ACM International Conference on Web Search and Data Mining \hfill 2023
+&  \begin{itemize}[leftmargin=10pt,topsep=0pt,before=\textbf{Program Committee}]
+    \item ACM International Conference on Web Search and Data Mining(WSDM) 2023
   \end{itemize}\\ 
 
 % --- Section: Teaching experience ---
 
-{\color{black}{Teaching experience}} 
-& \textbf{Teaching assistant, University of Southern California} \hfill Fall 2022 \\
-& EE 503: Probability for Electrical and Computer Engineers \\
-& Grading coursework and exams, leading and supervising lab exercises, and attending regular meetings. \\
+{\color{black}{Teaching Experience}} 
+&  \begin{itemize}[leftmargin=10pt, itemsep=-5pt, topsep=0pt,before=\textbf{Teaching assistant, University of Southern California}]
+    \item EE 503: Probability for Electrical and Computer Engineers \hfill Fall 2022
+    \item  Grading course work and answering questions for students.
+  \end{itemize}\\ 
+
 
 % --- Section: Talks and tutorials ---
 
@@ -245,10 +274,13 @@
 % --- Section: Awards, scholarships, etc. ---
 % --- Note: section title is spread over two lines ---
 
-\newline
-\nohyphens{{\color{black}{Honors and scholarships}}} 
-&  \begin{itemize}[leftmargin=10pt, itemsep=-5pt, topsep=0pt]
-    \item Masters Students Honors Program (University of Southern California) \hfill 2021
+
+\nohyphens{{\color{black}{Awards}}} 
+&  \begin{itemize}[leftmargin=10pt, itemsep=-5pt, topsep=0pt, before=\textbf{Bachelor of Engineering (B.E.)}]
+    \item Masters Students Honors Program (USC) \hfill 2021
+    \end{itemize}\\ 
+&  \begin{itemize}[leftmargin=10pt, itemsep=-5pt, topsep=0pt, before=\textbf{Bachelor of Engineering (B.E.)}]
+    \item ZTE Algorithm Competition, Regional Winner Award \hfill 2020
     \item Third Class Scholarship (Xidian University)\hfill 2019 
   \end{itemize}\\ 
 % & Masters Students Honors Program (University of Southern California) \hfill 2020\\
